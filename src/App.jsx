@@ -611,8 +611,8 @@ function S6({ deal }) {
     {cat:'Deposit',         label:`Deposit received — ${deal.deposit}`,     status:'pending'},
     {cat:'Conditions',      label:'Home inspection completed',               status:'pending'},
     {cat:'Conditions',      label:'Financing confirmed by lender',           status:'pending'},
-    {cat:'Condo',           label:'Condo documents requested & received',    status:'missing'},
-    {cat:'Legal',           label:'Lawyer assigned',                         status:'completed'},
+    {cat:'Condo',  label:'Condo documents requested & received', status:'pending'},
+    {cat:'Legal',  label:'Lawyer assigned',                      status:'pending'},
     {cat:'Forms',           label:'Consumer Relationships Guide signed',     status:'completed'},
     {cat:'Waivers',         label:'Condition waiver signed & delivered',     status:'pending'},
   ];
@@ -895,13 +895,12 @@ function S9({ deal }) {
 function S10({ deal }) {
   const docs=[
     {name:'Residential purchase contract',  status:'ready',   time:'Auto-collected on arrival'},
-    {name:'Trade Record Sheet',             status:'ready',   time:'Auto-populated from extraction'},
     {name:'MLS data sheet',                status:'ready',   time:'Auto-collected from listing'},
+    {name:'Title',                          status:'ready',   time:'Included with purchase contract'},
     {name:'Waiver of conditions',           status:'pending', time:'Awaiting condition removal — '+deal.condRemoval},
-    {name:'Amendments / addendum',          status:'missing', time:'Not yet received — agent notified'},
     {name:'Trust deposit confirmation',     status:'pending', time:'Awaiting deposit — '+deal.condDate},
-    {name:'Commission documents',           status:'pending', time:'Due 7 days before closing'},
-    {name:'Title',                          status:'pending', time:deal.lawyer+' — in progress'},
+    {name:'Amendments / addendum',          status:'pending', time:'N/A in most cases'},
+    {name:'Trade Record Sheet',             status:'pending', time:'Completed last — after waivers received'},
   ];
   const sc={ready:'green',pending:'amber',missing:'red'};
   const sl={ready:'Ready',pending:'Pending',missing:'Missing'};
